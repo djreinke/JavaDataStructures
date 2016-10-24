@@ -1,11 +1,22 @@
 package dataStructures;
 
-public class ArrayOperations {
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
+public class ArrayOperations {
+	
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int[] array = {1,2,4,8,16,32};
 		reversePrintArray(array);
+		
+		int[][] twoDArr = new int[][]{
+			  { 1, 2, 1},
+			  { 2, 3, 2},
+			  { 1, 2, 1}
+		};
+		calculateSumOfDiagonals(twoDArr);
 	}
 	
 	public static void reversePrintArray(int[] arr){
@@ -85,5 +96,29 @@ public class ArrayOperations {
         }
         return sum;
     }
+	
+	/**
+	 * Returns sum of diagonals for an N x N array
+	 * @param arr
+	 * @return sum of diagonals
+	 */
+	public static int calculateSumOfDiagonals(int[][] arr){
+		int sum = 0;
+		for(int i = 0, z = arr.length-1; i < arr.length; i++, z--){
+			sum+= arr[i][z];
+			sum+= arr[i][i];
+		}
+		return sum;
+	}
+	
+	@Test
+	public void testCalculateSumOfDiagonals(){
+		int[][] arr = new int[][]{
+			  { 1, 2, 1},
+			  { 2, 3, 2},
+			  { 1, 2, 1}
+		};
+		assertEquals(calculateSumOfDiagonals(arr), 10);
+	}
 
 }
