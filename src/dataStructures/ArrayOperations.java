@@ -5,7 +5,6 @@ import static org.junit.Assert.assertEquals;
 
 public class ArrayOperations {
 	
-	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int[] array = {1,2,4,8,16,32};
@@ -111,6 +110,9 @@ public class ArrayOperations {
 		return sum;
 	}
 	
+	/**
+	 * Method to test calculate sum of diagonals function
+	 */
 	@Test
 	public void testCalculateSumOfDiagonals(){
 		int[][] arr = new int[][]{
